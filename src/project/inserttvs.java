@@ -13,11 +13,7 @@ import javax.swing.JFileChooser;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -37,7 +33,7 @@ public class inserttvs extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/project","root","aaaaa");          
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/movie","root","");          
             java.sql.Statement st=con.createStatement();
             String s="select * from genre";
             ResultSet rs=st.executeQuery(s);
